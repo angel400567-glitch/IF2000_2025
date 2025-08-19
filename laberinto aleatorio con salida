@@ -1,0 +1,65 @@
+import random
+import os
+import time
+
+# Generar un laberinto perfecto usando backtracking recursivo
+def generar_laberinto_perfecto(ancho, alto):
+    # Inicializamos todo como pared
+    laberinto = [["#" for _ in range(ancho)] for _ in range(alto)]
+
+    # Movimientos posibles: derecha, izquierda, abajo, arriba
+    direcciones = [(2, 0), (-2, 0), (0, 2), (0, -2)]
+
+    def es_valido(x, y):
+        return 0 < x < ancho - 1 and 0 < y < alto - 1
+
+    def tallar(x, y):
+        laberinto[y][x] = " "
+        random.shuffle(direcciones)
+        for dx, dy in direcciones:
+            nx, ny = x + dx, y + dy
+            if es_valido(nx, ny) and laberinto[ny][nx] == "#":
+                # Abrir pared intermedia
+                laberinto[y + dy // 2][x + dx // 2] = " "
+                tallar(nx, ny)
+
+    # Empezamos desde (1,1)
+    tallar(1, 1)
+    # Marcar inicio y salida
+    laberinto[1][1] = "S"
+    laberinto[alto - 2][ancho - 2] = "E"
+    return laberinto
+
+def imprimir_laberinto(laberinto):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    for fila in laberinto:
+        print("".join(fila))
+    time.sleep(0.05)
+
+# Resolver con DFS
+def resolver_laberinto(laberinto, x, y):
+    if laberinto[y][x] == "E":
+        return True
+    if laberinto[y][x] in ("#", "."):
+        return False
+
+    if laberinto[y][x] != "S":
+        laberinto[y][x] = "."
+    imprimir_laberinto(laberinto)
+
+    if (resolver_laberinto(laberinto, x + 1, y) or
+        resolver_laberinto(laberinto, x, y + 1) or
+        resolver_laberinto(laberinto, x - 1, y) or
+        resolver_laberinto(laberinto, x, y - 1)):
+        return True
+
+    if laberinto[y][x] != "S":
+        laberinto[y][x] = " "
+    return False
+
+if __name__ == "__main__":
+    ancho, alto = 21, 11  # Deben ser impares para que funcione bien
+    laberinto = generar_laberinto_perfecto(ancho, alto)
+    imprimir_laberinto(laberinto)
+    resolver_laberinto(laberinto, 1, 1)
+    print("\n¡Laberinto resuelto!")
