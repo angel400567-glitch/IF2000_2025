@@ -102,28 +102,28 @@ public class Ejercicios_Semana2_PracticaEnClase {
     //matriz, las fichas negras se podrán representar con la letra “N” y las rojas con la letra “R”, al final 
     //deberá mostrar algo como lo siguiente. 
     // ---------------------------
-    public void tablero() {
-        char[][] tablero = new char[8][8];
+    public void ejerciciof() {
+        char[][] redonda = new char[8][8];
         for (int i = 0; i < 8; i++)
             for (int j = 0; j < 8; j++)
-                tablero[i][j] = ' ';
+                redonda[i][j] = ' ';
 
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 8; j++)
-                if ((i + j) % 2 == 1) tablero[i][j] = 'N';
+                if ((i + j) % 2 == 1) redonda[i][j] = 'N';
 
         for (int i = 5; i < 8; i++)
             for (int j = 0; j < 8; j++)
-                if ((i + j) % 2 == 1) tablero[i][j] = 'R';
+                if ((i + j) % 2 == 1) redonda[i][j] = 'R';
 
-        System.out.println("\nTablero");
+        System.out.println("\nredonda");
         System.out.print("  ");
         for (int i = 1; i <= 8; i++) System.out.print(i + " ");
         System.out.println();
 
         for (int i = 0; i < 8; i++) {
             System.out.print((char)('A'+i) + " ");
-            for (int j = 0; j < 8; j++) System.out.print(tablero[i][j] + " ");
+            for (int j = 0; j < 8; j++) System.out.print(redonda[i][j] + " ");
             System.out.println();
         }
     }
