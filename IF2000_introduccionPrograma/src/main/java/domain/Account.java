@@ -9,9 +9,8 @@ package domain;
  * @author dylan
  */
 public abstract class Account {
-    
-//Atributes
-    
+    //Atributes
+  
     private String accountNumber;
     private double balance;
     private Person client;
@@ -58,9 +57,11 @@ public abstract class Account {
     @Override
     public String toString() {
         
-        String result = "\nBANK Account INFORMATION:"
-                +"\n--------------------------------"
-                +"\nAccount Number: "+this.getAccountNumber()
+        String result = """
+                        
+                        BANK Account INFORMATION:
+                        --------------------------------
+                        Account Number: """+this.getAccountNumber()
                 +"\nBlance: "+this.getBalance()
                 +"\nAccount Owner: "+this.getClient().toString();
              return result;
@@ -70,3 +71,4 @@ public abstract class Account {
     
     
 }//endClass
+

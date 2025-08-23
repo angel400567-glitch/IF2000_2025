@@ -1,19 +1,15 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
-package IF2000_introduccionProgra;
+package IF2000_introduccionPrograma;
 
 /**
  *
  * @author dylan
  */
-public class IF2000_introduccionProgra {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+public class IF2000_introduccionPrograma {
+     public static void main(String[] args) {
         // TODO code application logic here
         
         //Data types
@@ -52,3 +48,4 @@ public class IF2000_introduccionProgra {
     }
     
 }
+
