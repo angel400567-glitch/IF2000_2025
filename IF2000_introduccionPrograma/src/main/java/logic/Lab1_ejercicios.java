@@ -4,8 +4,9 @@
  */
 package logic;
 
+
 import java.util.Scanner;
-import java.util.Random;
+
 
 /**
  * Lab1 - Ejercicios de diagramas de flujo
