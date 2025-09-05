@@ -69,7 +69,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person\n"
+        return "-----------\nPerson\n"
                 + "" + "\nname=" + getName() 
                 + "\n, lastName=" + getLastName() 
                 + "\n, id=" + getId() 

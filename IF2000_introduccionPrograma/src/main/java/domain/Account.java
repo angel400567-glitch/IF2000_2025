@@ -50,8 +50,8 @@ public abstract class Account {
      //-----------------------
     //Methods for polimorfism    
     //-----------------------
-    public abstract void deposit();
-    public abstract void withdraw();
+    public abstract void deposit(double amount);
+    public abstract void withdraw(double amount);
     public abstract double interestCalculation();
 
     @Override
@@ -61,9 +61,10 @@ public abstract class Account {
                         
                         BANK Account INFORMATION:
                         --------------------------------
-                        Account Number: """+this.getAccountNumber()
+                +Account Number: """+this.getAccountNumber()
                 +"\nBlance: "+this.getBalance()
                 +"\nAccount Owner: "+this.getClient().toString();
+                
              return result;
                 
          
