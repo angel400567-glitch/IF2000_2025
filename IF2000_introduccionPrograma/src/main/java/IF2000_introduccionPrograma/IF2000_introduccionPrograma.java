@@ -4,6 +4,10 @@
  */
 package IF2000_introduccionPrograma;
 
+import static buildinfo.BuildInfo.name;
+import domain.Person;
+import domain.SavingAccount;
+
 /**
  *
  * @author dylan
@@ -12,13 +16,26 @@ public class IF2000_introduccionPrograma {
      public static void main(String[] args) {
         // TODO code application logic here
         
-        //Data types
-        String name = "Lionel";
-        int age = 40;
+        Person client1= new Person("Edgardo","Corrales","123-234-456","454567",18);
         
-        System.out.println ("Hello World");
-        System.out.println ("Name:"+ name);
-        System.out.println ("Age:"+ age);
+        SavingAccount account1= new SavingAccount("2025-09-04",12,5,"10000567",25000,client1);
+        
+        //simulation of  depositm of 3000colones in the account
+        account1.deposit(3000);
+ 
+        System.out.println(account1.toString());
+
+
+
+
+
+//Data types
+        //String name = "Lionel";
+        //int age = 40;
+        
+        //System.out.println ("Hello World");
+        //System.out.println ("Name:"+ name);
+        //System.out.println ("Age:"+ age);
         
         //Python:
         //print('Hola Mundo')
