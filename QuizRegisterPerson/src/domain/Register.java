@@ -20,7 +20,7 @@ public class Register {
 
     static final String FILE_NAME = "persons.txt";
 
-    // Start registration
+    
     public static void startRegistration() {
         Scanner sc = new Scanner(System.in);
 
@@ -36,7 +36,7 @@ public class Register {
         System.out.println("Record saved in " + FILE_NAME);
     }
 
-    // ===================== Auxiliary Methods =====================
+    
 
     static String readNonEmpty(Scanner sc, String prompt) {
         String input;
